@@ -20,5 +20,5 @@ void seq(int a, int b,int c){
             suma += ii;
         }
     }
-    std::cout << "La suma de los numeros pares es: " << suma << "\n";
+    std::cout << "La suma de los numeros pares de la serie de Fibonacci es: " << suma << "\n";
 }
