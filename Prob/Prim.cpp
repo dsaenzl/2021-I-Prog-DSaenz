@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <cmath>
 
 void prim(int & a,int & b);
 int main(int argc,char *argv[]){
@@ -9,9 +10,10 @@ int main(int argc,char *argv[]){
     return 0;
 }
 void prim(int & a,int & b){
-    while(a>=b){
+    float sq= std::sqrt(a);
+    while(sq>=b){
         ++b;
-        if(a%b==0 || b==a){
+        if(a%b==0 || b==sq){
             break;
         }
     }
