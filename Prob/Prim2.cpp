@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <cmath>
 
 void smpr(int b);
 
@@ -15,9 +16,10 @@ void smpr(int b){
     int a =0;
     int c=1;
     while(b>=ii){
-        while(c<=ii){
+        float sq=std::sqrt(ii);
+        while(c<=sq){
             c++;
-            if(ii%c==0 || ii==c){
+            if(ii%c==0){
                 break;
             }
         }
@@ -26,7 +28,7 @@ void smpr(int b){
             c=1;
             continue;
         }
-        else if(ii%c==0 && ii==c){
+        else{
             a +=ii;
             ++ii;
             c=1;

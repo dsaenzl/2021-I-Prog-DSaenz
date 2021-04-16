@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <cmath>
 
 void prim(const int & a);
 int main(int argc,char *argv[]){
@@ -10,14 +11,15 @@ int main(int argc,char *argv[]){
 }
 void prim(const int & a){
     auto fmod=[](int b, int c){return b%c;};
-    int pr[100000];
+    int pr=0;
     int ii=2;
     int e=1;
     int k=1;
     while(a>=k){
-        while(ii>=e){
+        double sq=std::sqrt(ii);
+        while(sq>=e){
             e++;
-            if(fmod(ii,e)==0 || ii==e){
+            if(fmod(ii,e)==0){
                 break;
             }
         }
@@ -26,12 +28,12 @@ void prim(const int & a){
             e=1;
             continue;
         }
-        else if(fmod(ii,e)==0 && ii==e){
-            pr[k]=ii;
+        else{
+            pr=ii;
             k++;
             ii++;
             e=1;
         }
     }
-    std::cout << pr[k-1] << " ";
+    std::cout << pr << " ";
 }
