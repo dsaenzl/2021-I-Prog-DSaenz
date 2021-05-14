@@ -4,6 +4,8 @@
 const double G=9.81;
 const double dt =0.01;
 const double K=101.9;
+const double B=2.98;
+
 struct particle{
     float mass=0.0;
     double y=0.0;
@@ -43,7 +45,7 @@ void fuer(std::vector<particle> &a){
         }
         else{
             for(auto &x : a){
-                x.fy+=a[ii].delta*K;
+                x.fy+=a[ii].delta*K-B*x.mass*x.vy;
             }
         }
     }
